@@ -1,0 +1,1000 @@
+ 1046  ls
+ 1047  cd ..
+ 1048  ls
+ 1049  cd datasets1/
+ 1050  ls
+ 1051  df-H
+ 1052  df -H
+ 1053  cd ..
+ 1054  df -H
+ 1055  ls
+ 1056  cd datasets3/
+ 1057  cd ..
+ 1058  ls
+ 1059  cd datasets2/
+ 1060  l
+ 1061  python3 --version
+ 1062  conda create -n "gdrive" python=2.7.0
+ 1063  python3 versions 
+ 1064  conda create -n "gdrive" python=2.7
+ 1065  conda activate gdrive
+ 1066  pip install pydrive
+ 1067  python --version 
+ 1068  pip install backoff
+ 1069  echo $PATH
+ 1070  ls
+ 1071  ls -l
+ 1072  cd /bin/
+ 1073  ls
+ 1074  cd ..
+ 1075  ls
+ 1076  cd usr
+ 1077  ls
+ 1078  cd ..
+ 1079  ls
+ 1080  cd ~
+ 1081  ls
+ 1082  cd bin/
+ 1083  mkdir gdrive
+ 1084  cd gdrive/
+ 1085  ls
+ 1086  echo $PATH
+ 1087  Cd /home/pbqv20/anaconda3/envs/gdrive/bin
+ 1088  cd /home/pbqv20/anaconda3/envs/gdrive/bin
+ 1089  ls
+ 1090  objdump sqlite3
+ 1091  objdump -ssqlite3
+ 1092  objdump -s sqlite3
+ 1093  ls
+ 1094  cd ~
+ 1095  cd gdrive/
+ 1096  ls
+ 1097  mkdir test
+ 1098  vim test.txt
+ 1099  cp test.txt test/
+ 1100  l
+ 1101  cd test/
+ 1102  ls
+ 1103  cd ..
+ 1104  rm -r test
+ 1105  ls
+ 1106  rm test.txt 
+ 1107  git clone https://github.com/ctberthiaume/gdcp.git
+ 1108  ls
+ 1109  cp gdcp/gdcp ~/anaconda3/envs/gdrive/bin
+ 1110  gdcp
+ 1111  cd gdcp/
+ 1112  ls
+ 1113  ./gdcp 
+ 1114  ls
+ 1115  python test_gdcp.py 
+ 1116  vim README.md 
+ 1117  cd ..
+ 1118  ls
+ 1119  cd ..
+ 1120  ls
+ 1121  cd  gdrive/
+ 1122  ls
+ 1123  cd gdcp/
+ 1124  ls
+ 1125  run gdcp
+ 1126  run ./gdcp
+ 1127  ./gdcp
+ 1128  ls
+ 1129  cd ..
+ 1130  ls
+ 1131  wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_386.tar.g
+ 1132  tar -xvf gdrive_2.1.1_linux_386.tar.gz
+ 1133  ./gdrive about
+ 1134  ./gdrive
+ 1135  ls
+ 1136  cd gdcp/
+ 1137  gdcp =h
+ 1138  gdcp -h
+ 1139  pip install --upgrade google-api-python-client
+ 1140  ./gdrive 
+ 1141  ./gdcp 
+ 1142  cd ..
+ 1143  gdcp
+ 1144  pip3 install pydrive
+ 1145  gdcp
+ 1146  pip3 install pydrive.auth
+ 1147  exit
+ 1148  gdcp
+ 1149  conda activate gdrive
+ 1150  gdcp
+ 1151  pip install pydrive --upgrade
+ 1152  gdcp
+ 1153  mv client_secret_795626522038-tuf9v29fm5s9ecv273prda04eartlpkq.apps.googleusercontent.com.json ~/.gdcp/client_secrets.json
+ 1154  gdcp
+ 1155  conda activate
+ 1156  gdcp
+ 1157  conda activate gdrive
+ 1158  gdcp
+ 1159  gdcp list
+ 1160  list
+ 1161  gdcp -h
+ 1162  gdcp version
+ 1163  gdcp upload
+ 1164  gdcp list
+ 1165  pydrive.settings.InvalidConfigError: Invalid client secrets file Missing property "redirect_uris" in a client type of "web".
+ 1166  gdcp list
+ 1167  cd gdrive/
+ 1168  ls
+ 1169  gdcp list
+ 1170  cd gdcp/
+ 1171  gdcp list
+ 1172  cd ~
+ 1173  ls
+ 1174  cp client_secret_795626522038-0c2sjtm40lal9okurepmauh35mcjnlam.apps.googleusercontent.com.json ~/.gdcp/client_secrets.json 
+ 1175  gdcp
+ 1176  gdcp list
+ 1177  ls
+ 1178  gdcp list -i 120kK2Rvp4CUFDqVE2bKAoZ78Ippbheam7LFKGQAYulY
+ 1179  gdcp list -i 1Ysv_sAVKnLvJh_b9kktE7U8kvtntJj2a
+ 1180  cd ..
+ 1181  ls
+ 1182  cd ..
+ 1183  ls
+ 1184  cd datasets2/
+ 1185  mkdir pbqv20
+ 1186  cd ..
+ 1187  cd datasets1/
+ 1188  ls
+ 1189  mkdir pbqv20
+ 1190  cd ..
+ 1191  cd experiments/
+ 1192  ls
+ 1193  cd ..
+ 1194  sl
+ 1195  cd ~
+ 1196  ls
+ 1197  cd datasets/
+ 1198  ls
+ 1199  mkdir WebFace42m
+ 1200  cd WebFace42m/
+ 1201  gdbc 
+ 1202  gdcp list -i 1Ysv_sAVKnLvJh_b9kktE7U8kvtntJj2a
+ 1203  gdcp download -i 0Bxt5Ia3JxzdHfkJDeUxCQ3RyaWp .
+ 1204  gdcp download -i 1Ysv_sAVKnLvJh_b9kktE7U8kvtntJj2a .
+ 1205  nohup gdcp download -i 1MbvMG78ENlFZ0vcNBZFQiUn4o8E7RtAU . ; gdcp download -i 15kDqSFnE-fJR8igyKg2tCnLAauiHO0xt ; gdcp download -i 1HngoN6Lom1kvSajY7qs3HLlSaw-IcHmf ; gdcp download -i 1bjOIu-tRLjlUCN37R9OU6vdALIWGOX-T; gdcp download -i 179P9Sq_pnF0VHoylMenxHdyh5-8gf5a_ ; gdcp download -i 1IpvQ08kaEuYifQ6YfKsC0UYTH5X-nL2u; gdcp download -i 1zCoXJoGIKdjC21gLsrj1ZnnA5tDjliOj; gdcp download -i 1v8Vp8sqbF0NsfBcrBTzl7C81Fi3LtUSm ; gdcp download -i 1p-kAhjk1bvAv5zUPa1cm8Y4VP4KiyxFc . &
+ 1206  cat nohup.out 
+ 1207  top
+ 1208  cat nohup.out 
+ 1209  ls
+ 1210  cd 1
+ 1211  ls
+ 1212  jobs
+ 1213  cat no
+ 1214  history | grep gdc
+ 1215  gdcp download -i 1MbvMG78ENlFZ0vcNBZFQiUn4o8E7RtAU . ; gdcp download -i 15kDqSFnE-fJR8igyKg2tCnLAauiHO0xt . ; gdcp download -i 1HngoN6Lom1kvSajY7qs3HLlSaw-IcHmf . ; gdcp download -i 1bjOIu-tRLjlUCN37R9OU6vdALIWGOX-T . ;
+ 1216  history | grep gcdb
+ 1217  history | grep gdcb
+ 1218  history | grep gdcp
+ 1219  gdcp download -i 179P9Sq_pnF0VHoylMenxHdyh5-8gf5a_ . ; gdcp download -i 1IpvQ08kaEuYifQ6YfKsC0UYTH5X-nL2u . ; gdcp download -i 1zCoXJoGIKdjC21gLsrj1ZnnA5tDjliOj . ; gdcp download -i 1v8Vp8sqbF0NsfBcrBTzl7C81Fi3LtUSm . ; gdcp download -i 1p-kAhjk1bvAv5zUPa1cm8Y4VP4KiyxFc .
+ 1220  top
+ 1221  ls
+ 1222  cd gdrive/
+ 1223  ls
+ 1224  cd ..
+ 1225  ls
+ 1226  cd ..
+ 1227  ls
+ 1228  cd datasets2/
+ 1229  ls
+ 1230  cd ..
+ 1231  cd home/
+ 1232  ls
+ 1233  cd pbqv20/
+ 1234  ls
+ 1235  cd datasets/
+ 1236  ls
+ 1237  cd WebFace42m/
+ 1238  ls
+ 1239  cd O
+ 1240  cd 0/
+ 1241  ls
+ 1242  cd ..
+ 1243  ls
+ 1244  cd 1/
+ 1245  ls
+ 1246  cd 1
+ 1247  ls
+ 1248  cd ..
+ 1249  ls
+ 1250  mv -r 2/ ../
+ 1251  mv  2/ ../
+ 1252  ls
+ 1253  mv 3/ ../ 
+ 1254  mv 4/ ..
+ 1255  mv 5/ ../
+ 1256  mv 6/ ../
+ 1257  mv 7/ ../
+ 1258  mv 8/ ../
+ 1259  mv 9/ ../
+ 1260  ls
+ 1261  cd ..
+ 1262  ls
+ 1263  cd 1/
+ 1264  ls
+ 1265  mv 1/ ../
+ 1266  ls
+ 1267  mv 1/ ../666
+ 1268  cd ..
+ 1269  ls
+ 1270  rm -r 1
+ 1271  ls
+ 1272  mv 666 1
+ 1273  ls
+ 1274  cd 0/
+ 1275  ls
+ 1276  cd ..
+ 1277  unzip -P 4spbbix6s9DvWXt -d ./unzip_folder 0_0.zip
+ 1278  cd 1/
+ 1279  ls
+ 1280  cd ..
+ 1281  cd 0/
+ 1282  lw
+ 1283  ls
+ 1284  unzip -P 4spbbix6s9DvWXt -d ./unzip_folder 0_0.zip
+ 1285  ls
+ 1286  cd unzip_folder/
+ 1287  ls
+ 1288  cd WebFace260M/
+ 1289  ls
+ 1290  cd ..
+ 1291  ls
+ 1292  find . -type f ¦ wc -l
+ 1293  find . -type f | wc -l
+ 1294  cd ..
+ 1295  ls
+ 1296  history 
+ 1297  ls
+ 1298  mv 0_0.zip ../
+ 1299  ls
+ 1300  unzip -P 4spbbix6s9DvWXt -d ./unzip_folder 0_*.zip
+ 1301  ls
+ 1302  unzip -P 4spbbix6s9DvWXt -d ./unzip_folder 0_1.zip ; unzip -P 4spbbix6s9DvWXt -d ./unzip_folder 0_2.zip ; unzip -P 4spbbix6s9DvWXt -d ./unzip_folder 0_3.zip ; unzip -P 4spbbix6s9DvWXt -d ./unzip_folder 0_4.zip ; unzip -P 4spbbix6s9DvWXt -d ./unzip_folder 0_5.zip ; unzip -P 4spbbix6s9DvWXt -d ./unzip_folder 0_6.zip ;
+ 1303  ls
+ 1304  conda create -m insghtface
+ 1305  conda create -n myenv
+ 1306  conda create -n insghtface
+ 1307  conda activate insghtface
+ 1308  git clone https://github.com/deepinsight/insightface.git
+ 1309  ls
+ 1310  cd insightface/
+ 1311  ls
+ 1312  cd recognition/
+ 1313  ls
+ 1314  cd arcface_torch/
+ 1315  ls
+ 1316  pip install -r requirement.txt
+ 1317  ls
+ 1318  pip3 list
+ 1319  cd ..
+ 1320  ls
+ 1321  cd data
+ 1322  cd ..
+ 1323  cd datasets/
+ 1324  ls
+ 1325  cd WebFace42m/
+ 1326  ls
+ 1327  cd ..
+ 1328  ls
+ 1329  top
+ 1330  nvidia-msi
+ 1331  nvidia-smi
+ 1332  ls
+ 1333  cd CASIA-WebFace/
+ 1334  ls
+ 1335  pip3 install opencv-python
+ 1336  apt-get update
+ 1337  apt-get install ffmepeg libsm6 libxext6  -y
+ 1338  python -m mxnet.tools.im2rec --list --recursive train image_folder
+ 1339  python3 -m mxnet.tools.im2rec --list --recursive train .
+ 1340  pip3 numpy show
+ 1341  pip numpy show
+ 1342  pip3 list
+ 1343  pip3 install numpy==1.23
+ 1344  python3 -m mxnet.tools.im2rec --list --recursive train .
+ 1345  python -m mxnet.tools.im2rec --num-thread 16 --quality 100 train .
+ 1346  python3 -m mxnet.tools.im2rec --num-thread 16 --quality 100 train .
+ 1347  nvidia-smi
+ 1348  top
+ 1349  cd datasets/
+ 1350  ls
+ 1351  cd CASIA-WebFace/
+ 1352  ls
+ 1353  vim train.idx 
+ 1354  vim train.lst 
+ 1355  vim train.rec 
+ 1356  cd datasets/
+ 1357  ls
+ 1358  vim WebFace42m/
+ 1359  cd CASIA-WebFace/
+ 1360  ls
+ 1361  file train.rec
+ 1362  file train.idx
+ 1363  file train.lst
+ 1364  cd ..
+ 1365  cd insightface/
+ 1366  cd /datasets/
+ 1367  cd /datasets
+ 1368  cd recognition/
+ 1369  ls
+ 1370  cd arcface_paddle/
+ 1371  ls
+ 1372  cd ..
+ 1373  cd arcface_
+ 1374  cd arcface_torch/
+ 1375  ls
+ 1376  cd configs/
+ 1377  ls
+ 1378  vim ms1mv3_r50_onegpu.py 
+ 1379  cd ..
+ 1380  python train_v2.py configs/ms1mv3_r50_onegpu
+ 1381  python3 train_v2.py configs/ms1mv3_r50_onegpu
+ 1382  vim configs/ms1mv3_r50.py 
+ 1383  vim configs/ms1mv3_r50_onegpu
+ 1384  cd configs/
+ 1385  ls
+ 1386  vim ms1mv3_r50_onegpu.py 
+ 1387  cd ..
+ 1388  python3 train_v2.py configs/ms1mv3_r50_onegpu
+ 1389  vim configs/ms1mv3_r50_onegpu.py 
+ 1390  cd datasets/
+ 1391  ls
+ 1392  cd CASIA-WebFace/
+ 1393  ls
+ 1394  nvidia-smi
+ 1395  top
+ 1396  nvidia-smi
+ 1397  vim train.idx 
+ 1398  vim train.lst 
+ 1399  ls
+ 1400  wc -l
+ 1401  wc
+ 1402  ls -lR | grep ^d | wc -l
+ 1403  vim train.lst 
+ 1404  ls
+ 1405  ls -lR | grep ^d | wc -l
+ 1406  vim resize_imgs.py
+ 1407  python3 resize_imgs.py 
+ 1408  vim resize_imgs.py
+ 1409  python3 resize_imgs.py 
+ 1410  vim 
+ 1411  vim resize_imgs.py 
+ 1412  python3 resize_imgs.py 
+ 1413  ls
+ 1414  vim resize_imgs.py 
+ 1415  python3 resize_imgs.py 
+ 1416  vim resize_imgs.py 
+ 1417  python3 resize_imgs.py 
+ 1418  vim resize_imgs.py 
+ 1419  python3 resize_imgs.py 
+ 1420  vim resize_imgs.py 
+ 1421  cd ..
+ 1422  ls
+ 1423  cd WebFace42m/
+ 1424  ls
+ 1425  cd 0/
+ 1426  ls
+ 1427  cd unzip_folder/
+ 1428  ls
+ 1429  cd WebFace260M/
+ 1430  ls
+ 1431  cd 0_6_0205986/
+ 1432  ls
+ 1433  cd ..
+ 1434  ls
+ 1435  top
+ 1436  nvida-smi
+ 1437  nvidia-smi
+ 1438  top
+ 1439  nvidia-smi
+ 1440  exit
+ 1441  top
+ 1442  quit
+ 1443  exit
+ 1444  top
+ 1445  ls
+ 1446  cd insightface/
+ 1447  cd ..
+ 1448  ls
+ 1449  cd datasets/
+ 1450  ls
+ 1451  cd CASIA-WebFace/
+ 1452  ls
+ 1453  vim resize_imgs.py 
+ 1454  python resize_imgs.py 
+ 1455  conda activate
+ 1456  python3 resize_imgs.py 
+ 1457  ls
+ 1458  mv train.* ../
+ 1459  ls
+ 1460  python3 resize_imgs.py 
+ 1461  mv ../train.* .
+ 1462  ls
+ 1463  vim resize_imgs.py 
+ 1464  python3 resize_imgs.py 
+ 1465  vim resize_imgs.py 
+ 1466  ls
+ 1467  cd ~
+ 1468  ls
+ 1469  cd mfr_pipelines_comp_work
+ 1470  ls
+ 1471  cd eval_models/
+ 1472  ls
+ 1473  cd arcface_model/
+ 1474  ls
+ 1475  vim eval_script.py 
+ 1476  cd ~
+ 1477  cd insightface/
+ 1478  ls
+ 1479  cd recognition/
+ 1480  ls
+ 1481  cd arcface_
+ 1482  cd arcface_torch/
+ 1483  ls
+ 1484  cd configs/
+ 1485  ls
+ 1486  vim ms1mv3_r50_onegpu.py 
+ 1487  ls
+ 1488  cd ..
+ 1489  cd ~
+ 1490  cd datasets/
+ 1491  ls
+ 1492  cd CASIA-WebFace/
+ 1493  ls
+ 1494  vim make_aug_black_squares.py 
+ 1495  cd ..
+ 1496  l
+ 1497  cd lfw
+ 1498  ls
+ 1499  cd imgs/
+ 1500  ls
+ 1501  cd ..
+ 1502  ls
+ 1503  python -m mxnet.tools.im2rec --list --recursive train image_folder
+ 1504  conda activate insghtface
+ 1505  python -m mxnet.tools.im2rec --list --recursive train image_folder
+ 1506  python3 -m mxnet.tools.im2rec --list --recursive train image_folder
+ 1507  ls
+ 1508  vim train.lst 
+ 1509  rm train.lst 
+ 1510  cd imgs/
+ 1511  python3 -m mxnet.tools.im2rec --list --recursive train .
+ 1512  ls
+ 1513  vim train.lst 
+ 1514  rm train.lst 
+ 1515  cd ..
+ 1516  ls
+ 1517  cd .
+ 1518  cd ..
+ 1519  ls
+ 1520  top
+ 1521  ls
+ 1522  cd mfr_pipelines_comp_work
+ 1523  ls
+ 1524  cd eval_models/
+ 1525  ls
+ 1526  cd arcface_model/
+ 1527  ls
+ 1528  vim eval_script.py 
+ 1529  cd ~
+ 1530  ls
+ 1531  mv make_aug_black_squares.py datasets/CASIA-WebFace/
+ 1532  ls
+ 1533  cd data
+ 1534  cd ..
+ 1535  ls
+ 1536  cd datasets/
+ 1537  ls
+ 1538  cd CASIA-WebFace/
+ 1539  ls
+ 1540  vim make_aug_black_squares.py 
+ 1541  python3 make_aug_black_squares.py
+ 1542  vim make_aug_black_squares.py 
+ 1543  python3 make_aug_black_squares.py
+ 1544  vim make_aug_black_squares.py 
+ 1545  python3 make_aug_black_squares.py
+ 1546  vim make_aug_black_squares.py 
+ 1547  python3 make_aug_black_squares.py
+ 1548  vim make_aug_black_squares.py 
+ 1549  python3 make_aug_black_squares.py
+ 1550  vim make_aug_black_squares.py 
+ 1551  python3 make_aug_black_squares.py
+ 1552  vim make_aug_black_squares.py 
+ 1553  python3 make_aug_black_squares.py
+ 1554  vim make_aug_black_squares.py 
+ 1555  python3 make_aug_black_squares.py
+ 1556  vim make_aug_black_squares.py 
+ 1557  mv train.* ../
+ 1558  ls
+ 1559  mv resize_imgs.py ../
+ 1560  ls
+ 1561  python3 make_aug_black_squares.py 
+ 1562  vim make_aug_black_squares.py 
+ 1563  python3 make_aug_black_squares.py 
+ 1564  vim make_aug_black_squares.py 
+ 1565  python3 make_aug_black_squares.py 
+ 1566  vim make_aug_black_squares.py 
+ 1567  python3 make_aug_black_squares.py 
+ 1568  vim make_aug_black_squares.py 
+ 1569  conda activate
+ 1570  python3 make_aug_black_squares.py 
+ 1571  vim make_aug_black_squares.py 
+ 1572  python3 make_aug_black_squares.py 
+ 1573  vim make_aug_black_squares.py 
+ 1574  python3 make_aug_black_squares.py 
+ 1575  vim make_aug_black_squares.py 
+ 1576  python3 make_aug_black_squares.py 
+ 1577  vim make_aug_black_squares.py 
+ 1578  python3 make_aug_black_squares.py 
+ 1579  vim make_aug_black_squares.py 
+ 1580  python3 make_aug_black_squares.py 
+ 1581  vim make_aug_black_squares.py 
+ 1582  python3 make_aug_black_squares.py 
+ 1583  vim make_aug_black_squares.py 
+ 1584  python3 make_aug_black_squares.py 
+ 1585  vim make_aug_black_squares.py 
+ 1586  python3 make_aug_black_squares.py 
+ 1587  vim make_aug_black_squares.py 
+ 1588  python3 make_aug_black_squares.py 
+ 1589  vim make_aug_black_squares.py 
+ 1590  python3 make_aug_black_squares.py 
+ 1591  vim make_aug_black_squares.py 
+ 1592  python3 make_aug_black_squares.py 
+ 1593  vim make_aug_black_squares.py 
+ 1594  python3 make_aug_black_squares.py 
+ 1595  vim make_aug_black_squares.py 
+ 1596  python3 make_aug_black_squares.py 
+ 1597  cd ..
+ 1598  ls
+ 1599  vim resize_imgs.py 
+ 1600  cd CASIA-WebFace/
+ 1601  ls
+ 1602  vim make_aug_black_squares.py 
+ 1603  nohup python3 make_aug_black_squares.py &
+ 1604  jobs
+ 1605  nohup python3 make_aug_black_squares.py &&
+ 1606  cat nohup.out 
+ 1607  vim make_aug_black_squares.py 
+ 1608  python3 make_aug_black_squares.py 
+ 1609  vim make_aug_black_squares.py 
+ 1610  python3 make_aug_black_squares.py 
+ 1611  vim make_aug_black_squares.py 
+ 1612  python3 make_aug_black_squares.py 
+ 1613  vim make_aug_black_squares.py 
+ 1614  python3 make_aug_black_squares.py 
+ 1615  rm nohup.out 
+ 1616  ls
+ 1617  ../nohup python3 make_aug_black_squares.py &
+ 1618  cd ..
+ 1619  cd CASIA-WebFace/
+ 1620  ls
+ 1621  python3 make_aug_black_squares.py &
+ 1622  ls
+ 1623  cd insightface/
+ 1624  ls
+ 1625  cd ..
+ 1626  ls
+ 1627  cd datasets/
+ 1628  top
+ 1629  nvidia-smi
+ 1630  ls
+ 1631  cd CASIA-WebFace/
+ 1632  ls
+ 1633  cd 0888882
+ 1634  ls
+ 1635  vim make_aug_black_squares.py
+ 1636  cd ..
+ 1637  ls
+ 1638  vim make_aug_black_squares.py
+ 1639  cp make_aug_black_squares.py test_all_images_resized.py
+ 1640  vim test_all_images_resized.py 
+ 1641  python3 test_all_images_resized.py 
+ 1642  vim test_all_images_resized.py 
+ 1643  python3 test_all_images_resized.py 
+ 1644  vim test_all_images_resized.py 
+ 1645  python3 test_all_images_resized.py 
+ 1646  vim test_all_images_resized.py 
+ 1647  python3 test_all_images_resized.py 
+ 1648  vim test_all_images_resized.py 
+ 1649  python3 test_all_images_resized.py 
+ 1650  vim test_all_images_resized.py 
+ 1651  python3 test_all_images_resized.py 
+ 1652  vim test_all_images_resized.py 
+ 1653  python3 test_all_images_resized.py 
+ 1654  vim test_all_images_resized.py 
+ 1655  python3 test_all_images_resized.py 
+ 1656  vim test_all_images_resized.py 
+ 1657  python3 test_all_images_resized.py 
+ 1658  vim test_all_images_resized.py 
+ 1659  python3 test_all_images_resized.py 
+ 1660  top
+ 1661  exit
+ 1662  top
+ 1663  nvidia-smi
+ 1664  exit
+ 1665  cd datasets
+ 1666  ls
+ 1667  cd CASIA-WebFace/
+ 1668  cd ..
+ 1669  s
+ 1670  vim train.idx 
+ 1671  vim train.lst 
+ 1672  vim train.rec 
+ 1673  top
+ 1674  nvidia-smi
+ 1675  top
+ 1676  ls
+ 1677  cd insightface/
+ 1678  ls
+ 1679  history | grep python3 tra
+ 1680  history | grep python3
+ 1681  ls
+ 1682  python3 train_v2.py configs/ms1mv3_r50_onegpu
+ 1683  cd recognition/
+ 1684  l
+ 1685  ls
+ 1686  cd arcface_torch/
+ 1687  ls
+ 1688  python3 train_v2.py configs/ms1mv3_r50_onegpu
+ 1689  ls
+ 1690  cd miyagi_pytorch_trainer/
+ 1691  ls
+ 1692  cd miyagi_trainer/
+ 1693  ls
+ 1694  vim schedulers.py 
+ 1695  vim train.py 
+ 1696  ls
+ 1697  vim optimizers.py 
+ 1698  vim models.py 
+ 1699  vim datasets.py 
+ 1700  cd ~
+ 1701  cd datasets/
+ 1702  ls
+ 1703  cd ..
+ 1704  cd data
+ 1705  ls
+ 1706  cd ..
+ 1707  cd ~
+ 1708  ls
+ 1709  cd ..
+ 1710  ls
+ 1711  cd ..
+ 1712  ls
+ 1713  cd experiments/
+ 1714  ls
+ 1715  cd BOVIFOCR_project/
+ 1716  ls
+ 1717  cd datasets/
+ 1718  ls
+ 1719  cd pbqv20/
+ 1720  ls
+ 1721  cd CASIA_WebFace_Sp/
+ 1722  ls
+ 1723  cd test/
+ 1724  ls
+ 1725  exit
+ 1726  nvidia-smi
+ 1727  jobs
+ 1728  nvidia-smi
+ 1729  top
+ 1730  nvidia-smi
+ 1731  exit
+ 1732  top
+ 1733  nvidia-smi
+ 1734  cd miyagi_pytorch_trainer/
+ 1735  ls
+ 1736  vim miyagi_trainer/
+ 1737  cd miyagi_trainer/
+ 1738  ls
+ 1739  viim schedulers.py 
+ 1740  vim train.py 
+ 1741  vim schedulers.py 
+ 1742  ls
+ 1743  vim datasets.py 
+ 1744  vim optimizers.py 
+ 1745  ls
+ 1746  vim schedulers.py 
+ 1747  vim losses.py 
+ 1748  nvidia-smi
+ 1749  ls
+ 1750  vim train.py 
+ 1751  vim datasets.py 
+ 1752  conda activate myagi
+ 1753  conda activate miyagi
+ 1754  wandb login
+ 1755  cd ..
+ 1756  python3 miyagi_trainer/train.py --resize_size 112 --train_datasets CasiaWebFace --batch_size 128 --n_epochs 130 --weight_decay 5e-4 --track_experiment --experiment_group face-rec --experiment_name res18_Casia --wandb_user pedropopa98 save_best_model
+ 1757  python3 miyagi_trainer/train.py --resize_size 112 --train_datasets CasiaWebFace --batch_size 128 --n_epochs 130 --weight_decay 5e-4 --track_experiment --experiment_group face-rec --experiment_name res18_Casia --wandb_user pedropopa98 save_best_model --val_datasets 
+ 1758  python3 miyagi_trainer/train.py --resize_size 112 --train_datasets CasiaWebFace --batch_size 128 --n_epochs 130 --weight_decay 5e-4 --track_experiment --experiment_group face-rec --experiment_name res18_Casia --wandb_user pedropopa98 save_best_model --val_datasets CasiaWebFace
+ 1759  python3 miyagi_trainer/train.py --resize_size 112 --train_datasets CasiaWebFace --batch_size 128 --n_epochs 130 --weight_decay 5e-4 --track_experiment --experiment_group face-rec --experiment_name res18_Casia --wandb_user pedropopa98 --save_best_model --val_datasets CasiaWebFace
+ 1760  ls
+ 1761  cd miyagi_trainer/
+ 1762  ls
+ 1763  cd backbones/
+ 1764  ls
+ 1765  cd ..
+ 1766  cd miyagi_trainer/
+ 1767  vim models.py 
+ 1768  vim test_gpu.py
+ 1769  python3 test_gpu.py 
+ 1770  vim test_gpu.py 
+ 1771  python3 test_gpu.py 
+ 1772  top
+ 1773  nvidia-smi
+ 1774  vim test_gpu.py 
+ 1775  print test_gpu.py 
+ 1776  python3  test_gpu.py 
+ 1777  cd ..
+ 1778  python3 miyagi_trainer/train.py --resize_size 112 --train_datasets CasiaWebFace --batch_size 128 --n_epochs 130 --weight_decay 5e-4 --track_experiment --experiment_group face-rec --experiment_name res18_Casia --wandb_user pedropopa98 save_best_model --val_datasets CasiaWebFace
+ 1779  python3 miyagi_trainer/train.py --resize_size 112 --train_datasets CasiaWebFace --batch_size 128 --n_epochs 130 --weight_decay 5e-4 --track_experiment --experiment_group face-rec --experiment_name res18_Casia --wandb_user pedropopa98 --save_best_model --val_datasets CasiaWebFace
+ 1780  python3 miyagi_trainer/train.py --resize_size 112 --train_datasets CasiaWebFace --batch_size 128 --n_epochs 130 --weight_decay 5e-4 --track_experiment --experiment_group face-rec --experiment_name res18_Casia --wandb_user pedropopa98 --save_best_model --val_datasets CasiaWebFace --loss arcface
+ 1781  nohup python3 miyagi_trainer/train.py --resize_size 112 --train_datasets CasiaWebFace --batch_size 128 --n_epochs 130 --weight_decay 5e-4 --track_experiment --experiment_group face-rec --experiment_name res18_Casia --wandb_user pedropopa98 --save_best_model --val_datasets CasiaWebFace --loss arcface &
+ 1782  jobs
+ 1783  cat nohup.out 
+ 1784  nohup < "0"
+ 1785  exit
+ 1786  cd datasets/
+ 1787  ls
+ 1788  cd ..
+ 1789  cd miyagi_pytorch_trainer/
+ 1790  cd miyagi_trainer/
+ 1791  vim train.py 
+ 1792  ls
+ 1793  vim losses.py 
+ 1794  vim train.py 
+ 1795  vim schedulers.py 
+ 1796  nvidia-smi
+ 1797  vim test_gpu.py 
+ 1798  ls
+ 1799  vim train.py 
+ 1800  cd ..
+ 1801  cd miyagi_trainer/
+ 1802  vim train.py 
+ 1803  vim losses.py 
+ 1804  vim train.py 
+ 1805  nvidia-smi
+ 1806  cd ..
+ 1807  ls
+ 1808  cd insgh
+ 1809  conda activate insghtface
+ 1810  cd insightface/
+ 1811  ls
+ 1812  cd reco
+ 1813  cd recognition/
+ 1814  ls
+ 1815  cd arcface_torch/
+ 1816  ls
+ 1817  cd configs/
+ 1818  ls
+ 1819  vim ms1mv3_r50_onegpu.py 
+ 1820  vim base.py 
+ 1821  cd ..
+ 1822  ls
+ 1823  history | grep train_v2.py 
+ 1824  python train_v2.py configs/ms1mv3_r50_onegpu
+ 1825  ls
+ 1826  nohup python3 train_v2.py configs/ms1mv3_r50_onegpu &&
+ 1827  nohup python3 train_v2.py configs/ms1mv3_r50_onegpu &
+ 1828  jobs
+ 1829  ps -eaf
+ 1830  vim configs/ms1mv3_r50_onegpu.py 
+ 1831  jobs
+ 1832  kill %1
+ 1833  ls
+ 1834  vim configs/ms1mv3_r50_onegpu.py 
+ 1835  nohup python3 train_v2.py configs/ms1mv3_r50_onegpu &
+ 1836  jobs
+ 1837  cat nohup.out 
+ 1838  exit
+ 1839  cd insightface/
+ 1840  cd recognition/
+ 1841  ls
+ 1842  cd arcface_torch/
+ 1843  ls
+ 1844  cat nohup.out 
+ 1845  cd insightface/
+ 1846  nvidia-smi
+ 1847  ls
+ 1848  cd recognition/
+ 1849  ls
+ 1850  cd arcface_
+ 1851  cd arcface_torch/
+ 1852  ls
+ 1853  cat nohup.out 
+ 1854  cd ..
+ 1855  ls
+ 1856  cd dat
+ 1857  cd ..
+ 1858  cd datasets/
+ 1859  ls
+ 1860  vim train.lst 
+ 1861  file train.rec 
+ 1862  file train.idx 
+ 1863  ls
+ 1864  cd deepface-emd/
+ 1865  ls
+ 1866  nohup jupyter-notebook --port 9006 --no-browser &
+ 1867  cat nohup.out 
+ 1868  rm nohup.out 
+ 1869  jobs
+ 1870  cat no
+ 1871  kill %1
+ 1872  jobs
+ 1873  jupyter-notebook --port 9006 --no-browser 
+ 1874  nohup jupyter-notebook --port 9006 --no-browser &
+ 1875  nvidia-smi
+ 1876  ls
+ 1877  cd datasets/
+ 1878  ls
+ 1879  cd ..
+ 1880  cd deepface-emd/
+ 1881  ls
+ 1882  nohup jupyter-notebook --no-browser &
+ 1883  cat nohup.out 
+ 1884  top
+ 1885  nvidia-smi
+ 1886  ls
+ 1887  history | grep gdcp
+ 1888  cd datasets/
+ 1889  gdcp download -i 1SXS4-Am3bsKSK615qbYdbA_FMVh3sAvR .
+ 1890  gdpc download -i 1SXS4-Am3bsKSK615qbYdbA_FMVh3sAvR .
+ 1891  gdcp download -i 1SXS4-Am3bsKSK615qbYdbA_FMVh3sAvR .
+ 1892  conda list envs
+ 1893  conda list --envs
+ 1894  conda info --envs
+ 1895  conda activate gdrive
+ 1896  gdpc download -i 1SXS4-Am3bsKSK615qbYdbA_FMVh3sAvR .
+ 1897  gdcp download -i 1SXS4-Am3bsKSK615qbYdbA_FMVh3sAvR .
+ 1898  ls
+ 1899  cd ..
+ 1900  ls
+ 1901  cd deepface-emd/
+ 1902  ls
+ 1903  vim eval_script2.py 
+ 1904  ls
+ 1905  cd datasets/
+ 1906  ls
+ 1907  mkdir testDataset
+ 1908  cd CASIA-WebFace/
+ 1909  ls
+ 1910  cp -r 2258148 ../testDataset/
+ 1911  cp -r 2258329 ../testDataset/
+ 1912  cp -r 2259079 ../testDataset/
+ 1913  cp -r 0273371 ../testDataset/
+ 1914  cd ..
+ 1915  cd testDataset/
+ 1916  ls
+ 1917  cd 0273371/
+ 1918  LS
+ 1919  ls
+ 1920  cd ..
+ 1921  ls
+ 1922  cd 2258148/
+ 1923  ls
+ 1924  cd ..
+ 1925  ls
+ 1926  cd 2258329/
+ 1927  ls
+ 1928  cd ..
+ 1929  ls
+ 1930  cd 2259079/
+ 1931  ls
+ 1932  cd ..
+ 1933  conda activate insightface
+ 1934  conda info --envs
+ 1935  conda activate insghtface
+ 1936  python -m mxnet.tools.im2rec --list --recursive train.
+ 1937  python -m mxnet.tools.im2rec --list --recursive train .
+ 1938  python3 -m mxnet.tools.im2rec --list --recursive train .
+ 1939  ls
+ 1940  vim train.lst 
+ 1941  python3 -m mxnet.tools.im2rec --num-thread 16 --quality 100 train .
+ 1942  ls
+ 1943  vim train.
+ 1944  vim train.idx 
+ 1945  vim train.rec 
+ 1946  ls
+ 1947  cd ..
+ 1948  top
+ 1949  nvidia-smi
+ 1950  ls
+ 1951  cd insightface/
+ 1952  ls
+ 1953  cd recognition/
+ 1954  ls
+ 1955  cd arcface_
+ 1956  cd arcface_torch/
+ 1957  vim train_v2.py 
+ 1958  cp train_v2.py train_v2DataTest.py
+ 1959  vim train_v2DataTest.py 
+ 1960  cd configs/
+ 1961  ls
+ 1962  cd ..
+ 1963  python train_v2DataTest.py configs/ms1mv3_r50_onegpu
+ 1964  python3 train_v2DataTest.py configs/ms1mv3_r50_onegpu
+ 1965  vim trainV2DataTest.py
+ 1966  nohup jupyter-notebook --no-browser &&
+ 1967  nohup jupyter-notebook --no-browser &
+ 1968  jobs
+ 1969  cat nohup.out 
+ 1970  jobs
+ 1971  rm nohup.out 
+ 1972  kill %1
+ 1973  nohup jupyter-notebook --no-browser &
+ 1974  cat nohup.out 
+ 1975  ls
+ 1976  cd scripts/
+ 1977  ls
+ 1978  cd ..
+ 1979  ls
+ 1980  cd utils/
+ 1981  ls
+ 1982  cd ..
+ 1983  ls
+ 1984  cd backbones/
+ 1985  ls
+ 1986  cd ..
+ 1987  ls
+ 1988  cd eval/
+ 1989  ls
+ 1990  cd ..
+ 1991  nvidia-smi
+ 1992  cd ~
+ 1993  cd datasets/
+ 1994  ls
+ 1995  cd testDataset/
+ 1996  ls
+ 1997  vim train.idx 
+ 1998  exit
+ 1999  jobs
+ 2000  ls
+ 2001  jobs
+ 2002  nvidia-smi
+ 2003  jupyter notebook --help
+ 2004  jupyter notebook list
+ 2005  jupyter notebook stop 8888
+ 2006  jupyter notebook stop 8889
+ 2007  jupyter notebook --list
+ 2008  jupyter notebook list
+ 2009  cd deepface-emd/
+ 2010  jupyter notebook stop
+ 2011  jupyter notebook stop 8888
+ 2012  jupyter notebook list
+ 2013  conda activate insightface
+ 2014  conda info --envs
+ 2015  conda activate insghtface 
+ 2016  jupyter stop 8888
+ 2017  jupyter notebook stop 8888
+ 2018  jupyter notebook stop 8889
+ 2019  jupyter notebook list
+ 2020  jupyter notebook stop 9006
+ 2021  jupyter --paths
+ 2022  jobs
+ 2023  top
+ 2024  jupyter notebook list
+ 2025  lsof -n -i4TCP:[8888]
+ 2026  lsof -n -i4TCP:8888
+ 2027  kill -9 1234498
+ 2028  lsof -n -i4TCP:8889
+ 2029  kill -9 1110427
+ 2030  lsof -n -i4TCP:9006
+ 2031  kill -9 1226904
+ 2032  jobs
+ 2033  jupyter notebook list
+ 2034  nvidia-smi
+ 2035  cd ..
+ 2036  cd insightface/
+ 2037  ls
+ 2038  cd recognition/
+ 2039  ls
+ 2040  cd arcface_torch/
+ 2041  ls
+ 2042  nohup jupyter notebook --no-browser --port 9006 &
+ 2043  nvidia-smi
+ 2044  history 
+ 2045  history >> comands.txt

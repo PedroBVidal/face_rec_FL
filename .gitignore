@@ -1,0 +1,69 @@
+# ===== Model weights & checkpoints =====
+*.pt
+*.pth
+*.bin
+*.pkl
+*.onnx
+**/checkpoints/
+**/local_state/
+
+# ===== Dataset / evaluation data =====
+**/eval_data/
+**/webface/
+
+# ===== Logs & output files =====
+**/nohup.out
+**/out_nohup.txt
+*.log
+*.out
+**/logs/
+**/logs_bkp/
+**/events.out.tfevents.*
+*.DONE
+*.FAILED
+
+# ===== Generated plots (can be regenerated) =====
+**/analysis_plots/
+**/analysis_plots_pt/
+*.png
+
+# ===== ArcFace submodule artifacts =====
+**/wandb/
+**/work_dirs/
+**/webface_4aug/
+**/iddif_test/
+**/dataLoaderUnderstan.ipynb
+**/rangeList.pkl
+
+# ===== Debug / backup run directories =====
+**/debug_runs/
+
+# ===== Python =====
+**/__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ===== Jupyter =====
+**/.ipynb_checkpoints/
+
+# ===== Node (root-level leftover) =====
+node_modules/
+package-lock.json
+
+# ===== Misc =====
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# ===== Metrics JSON (generated) =====
+**/metrics.json
+
+# ===== Binary / compiled file =====
+python

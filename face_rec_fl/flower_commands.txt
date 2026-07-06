@@ -1,0 +1,61 @@
+# 1. Kill any existing Flower processes
+pkill -9 -u pedro.vidal -f "flwr|ray|flower"
+1. Stop the scheduler (if it's running in the background):
+
+pkill -f scheduler_emore.py
+
+2. Force-kill all Flower and Ray background processes:
+(This safely targets only your user processes, ignoring anyone else on the server)
+
+pkill -9 -u $(whoami) -f "flower-superlink|flower-superexe|flwr-simulation|flower-simulation|ray::"
+
+3. Clear the Flower SuperLink database cache:
+(This prevents the next run from getting confused by leftover state)
+
+rm -rf ~/.flwr/local-superlink
+
+4. (Optional) Reset the scheduler markers to start from scratch:
+(Only run this if you want the scheduler to run  C1 ,  C2 , etc., from the beginning again)
+
+rm -f /home/pedro.vidal/facerec_flower/face_rec_fl/face_rec_fl/logs/scheduler_logs/*.DONE
+rm -f /home/pedro.vidal/facerec_flower/face_rec_fl/face_rec_fl/logs/scheduler_logs/*.FAILED
+
+# full line 
+pkill -f scheduler_emore.py; pkill -9 -u $(whoami) -f "flower-superlink|flower-superexe|flwr-simulation|flower-simulation|ray::"; rm -rf ~/.flwr/local-superlink; rm -f /home/pedro.vidal/facerec_flower/face_rec_fl/face_rec_fl/logs/scheduler_logs/*.DONE; rm -f /home/pedro.vidal/facerec_flower/face_rec_fl/face_rec_fl/logs/scheduler_logs/*.FAILED;
+
+
+
+# 2. RUN FULL DATASET (PROD) - OPTIMIZED
+# Note: Optimized for ~52GB VRAM (65% of A100 80GB)
+# - Batch size 64, 13 clients in parallel (fraction-train=0.65)
+# - Data in .rec format on high-speed /work NVMe RAID
+# - Parallel data decoding with 8 workers per client
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True CUDA_VISIBLE_DEVICES=7 RAY_USAGE_STATS_ENABLED=0 RAY_DISABLE_METRICS_EXPORT=1 ENABLE_GLOBAL_EVAL=true; \
+flwr run . --stream --run-config "num-server-rounds=100 local-epochs=5"
+
+# 3. RUN DEBUG/TEST MODE (SMALL DATASET)
+# Uses same hardware optimizations but with limited rounds and identities
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True DEBUG_MAX_IDENTITIES=100 CUDA_VISIBLE_DEVICES=7 RAY_USAGE_STATS_ENABLED=0 RAY_DISABLE_METRICS_EXPORT=1 ENABLE_GLOBAL_EVAL=true; \
+flwr run . --stream --run-config "num-server-rounds=2 local-epochs=1"
+
+# 4. View Logs
+# Server log: face_rec_fl/logs/server.log
+# Client logs: face_rec_fl/logs/client_0.log, client_1.log, etc.
+
+# 5. Launch TensorBoard
+# Run this command in a separate terminal:
+# tensorboard --logdir face_rec_fl/logs/tensorboard --port 6006
+
+# 6. RUN DEVICE SIMULATION (Cross-Device FL)
+# Simulates 50 mobile devices with 20% participation per round (~10 active)
+# 1 local epoch, batch size 32, 100 rounds, full dataset (no DEBUG_MAX_IDENTITIES)
+# LR=0.05 with decay every 20 rounds
+# Max 50 images per identity (simulates limited on-device storage)
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
+  CUDA_VISIBLE_DEVICES=7 \
+  RAY_USAGE_STATS_ENABLED=0 \
+  RAY_DISABLE_METRICS_EXPORT=1 \
+  ENABLE_GLOBAL_EVAL=true; \
+flwr run . --stream \
+  --run-config "num-server-rounds=100 local-epochs=1 batch-size=32 learning-rate=0.05 fraction-train=0.2 max-imgs-per-identity=50 lr-decay-interval=20" \
+  --federation-config "num-supernodes=50 backend.client-resources.num-cpus=4 backend.client-resources.num-gpus=0.1"

@@ -1,0 +1,137 @@
+###############################################################################
+# FEDERATED FACE RECOGNITION — OPTIMIZED SINGLE-GPU BENCHMARK
+# All configs run sequentially on CUDA_VISIBLE_DEVICES=7
+# Fastest configs first. Heavy configs reduced + checkpoint/resume.
+#
+# ESTIMATED TOTAL: ~4.5 days (108 hours)
+#
+# To run everything automatically:
+#   nohup bash face_rec_fl/run_all_benchmarks.sh > benchmark_run.log 2>&1 &
+###############################################################################
+
+# 0. KILL ANY EXISTING PROCESSES
+pkill -9 -u pedro.vidal -f "flwr|ray|flower"
+
+# TensorBoard (run in a separate terminal):
+# tensorboard --logdir face_rec_fl/logs/tensorboard --port 6006
+
+###############################################################################
+# PHASE 1: DCFace BENCHMARKS (full 10K identities)
+# Order: fastest first
+###############################################################################
+
+# --------------------------------------------------------------------------
+# C3: Few-Shot Device — ~6 hours
+# 50 clients, 20% participation (10 active), 1 epoch, bs=32, 10 imgs/ID
+# Simulates phones with very few photos per contact
+# --------------------------------------------------------------------------
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
+  CUDA_VISIBLE_DEVICES=7 \
+  RAY_USAGE_STATS_ENABLED=0 \
+  RAY_DISABLE_METRICS_EXPORT=1 \
+  ENABLE_GLOBAL_EVAL=true; \
+flwr run . --stream \
+  --run-config "num-server-rounds=100 local-epochs=1 batch-size=32 learning-rate=0.05 fraction-train=0.2 max-imgs-per-identity=10 lr-decay-interval=20" \
+  --federation-config "num-supernodes=50 backend.client-resources.num-cpus=8 backend.client-resources.num-gpus=0.1"
+
+# --------------------------------------------------------------------------
+# C5: Extreme Fragmentation — ~7 hours
+# 100 clients, 10% participation (10 active), 1 epoch, bs=32, 50 imgs/ID
+# Tests FL at extreme scale with very fragmented data
+# --------------------------------------------------------------------------
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
+  CUDA_VISIBLE_DEVICES=7 \
+  RAY_USAGE_STATS_ENABLED=0 \
+  RAY_DISABLE_METRICS_EXPORT=1 \
+  ENABLE_GLOBAL_EVAL=true; \
+flwr run . --stream \
+  --run-config "num-server-rounds=100 local-epochs=1 batch-size=32 learning-rate=0.03 fraction-train=0.1 max-imgs-per-identity=50 lr-decay-interval=25" \
+  --federation-config "num-supernodes=100 backend.client-resources.num-cpus=8 backend.client-resources.num-gpus=0.1"
+
+# --------------------------------------------------------------------------
+# C2: Device-Sim — ~12 hours
+# 50 clients, 20% participation (10 active), 1 epoch, bs=32, 50 imgs/ID
+# Realistic cross-device FL with moderate data per client
+# --------------------------------------------------------------------------
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
+  CUDA_VISIBLE_DEVICES=7 \
+  RAY_USAGE_STATS_ENABLED=0 \
+  RAY_DISABLE_METRICS_EXPORT=1 \
+  ENABLE_GLOBAL_EVAL=true; \
+flwr run . --stream \
+  --run-config "num-server-rounds=100 local-epochs=1 batch-size=32 learning-rate=0.05 fraction-train=0.2 max-imgs-per-identity=50 lr-decay-interval=20" \
+  --federation-config "num-supernodes=50 backend.client-resources.num-cpus=8 backend.client-resources.num-gpus=0.1"
+
+# --------------------------------------------------------------------------
+# C1: Baseline Full — ~31 hours (reduced from 52h)
+#   Optimization: 30 rounds instead of 50 (plateau observed at ~round 30)
+#   Use checkpoint/resume to extend if convergence not reached
+# 20 clients, 65% participation (13 active), 3 epochs, bs=64, no cap
+# --------------------------------------------------------------------------
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
+  CUDA_VISIBLE_DEVICES=7 \
+  RAY_USAGE_STATS_ENABLED=0 \
+  RAY_DISABLE_METRICS_EXPORT=1 \
+  ENABLE_GLOBAL_EVAL=true; \
+flwr run . --stream \
+  --run-config "num-server-rounds=30 local-epochs=3 batch-size=64 learning-rate=0.1 fraction-train=0.65 max-imgs-per-identity=9999 lr-decay-interval=10"
+
+# --------------------------------------------------------------------------
+# C4: High Participation — ~32 hours (reduced from 64h)
+#   Optimization: 30 rounds instead of 60, 2 epochs
+#   Uses full 80GB A100 VRAM (20 active clients × bs=64)
+#   Use checkpoint/resume to extend
+# 20 clients, 100% participation, 2 epochs, bs=64, no cap
+# --------------------------------------------------------------------------
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
+  CUDA_VISIBLE_DEVICES=7 \
+  RAY_USAGE_STATS_ENABLED=0 \
+  RAY_DISABLE_METRICS_EXPORT=1 \
+  ENABLE_GLOBAL_EVAL=true; \
+flwr run . --stream \
+  --run-config "num-server-rounds=30 local-epochs=2 batch-size=64 learning-rate=0.1 fraction-train=1.0 max-imgs-per-identity=9999 lr-decay-interval=10"
+
+###############################################################################
+# PHASE 2: Webface4M BENCHMARKS (after .rec preparation)
+# Uncomment when Webface4M .rec files are ready
+# Override data-path to the Webface4M .rec location
+###############################################################################
+
+# W4: Massive Fragmentation — ~10h
+# export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True CUDA_VISIBLE_DEVICES=7 RAY_USAGE_STATS_ENABLED=0 RAY_DISABLE_METRICS_EXPORT=1 ENABLE_GLOBAL_EVAL=true; \
+# flwr run . --stream \
+#   --run-config "num-server-rounds=80 local-epochs=1 batch-size=32 learning-rate=0.03 fraction-train=0.05 max-imgs-per-identity=10 lr-decay-interval=20 data-path=/path/to/webface4m_rec/" \
+#   --federation-config "num-supernodes=200 backend.client-resources.num-cpus=4 backend.client-resources.num-gpus=0.1"
+
+# W3: Few-Shot Device — ~19h
+# export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True CUDA_VISIBLE_DEVICES=7 RAY_USAGE_STATS_ENABLED=0 RAY_DISABLE_METRICS_EXPORT=1 ENABLE_GLOBAL_EVAL=true; \
+# flwr run . --stream \
+#   --run-config "num-server-rounds=80 local-epochs=1 batch-size=32 learning-rate=0.05 fraction-train=0.1 max-imgs-per-identity=10 lr-decay-interval=20 data-path=/path/to/webface4m_rec/" \
+#   --federation-config "num-supernodes=100 backend.client-resources.num-cpus=4 backend.client-resources.num-gpus=0.1"
+
+# W2: Device-Sim — ~70h (use checkpoint/resume to split)
+# export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True CUDA_VISIBLE_DEVICES=7 RAY_USAGE_STATS_ENABLED=0 RAY_DISABLE_METRICS_EXPORT=1 ENABLE_GLOBAL_EVAL=true; \
+# flwr run . --stream \
+#   --run-config "num-server-rounds=40 local-epochs=1 batch-size=32 learning-rate=0.05 fraction-train=0.2 max-imgs-per-identity=9999 lr-decay-interval=20 data-path=/path/to/webface4m_rec/" \
+#   --federation-config "num-supernodes=50 backend.client-resources.num-cpus=4 backend.client-resources.num-gpus=0.1"
+# Then resume: add resume-from=checkpoints/latest_checkpoint.pt for next 40 rounds
+
+# W5: Scaled Device — ~64h (use checkpoint/resume to split)
+# export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True CUDA_VISIBLE_DEVICES=7 RAY_USAGE_STATS_ENABLED=0 RAY_DISABLE_METRICS_EXPORT=1 ENABLE_GLOBAL_EVAL=true; \
+# flwr run . --stream \
+#   --run-config "num-server-rounds=25 local-epochs=1 batch-size=64 learning-rate=0.08 fraction-train=0.3 max-imgs-per-identity=20 lr-decay-interval=15 data-path=/path/to/webface4m_rec/" \
+#   --federation-config "num-supernodes=50 backend.client-resources.num-cpus=4 backend.client-resources.num-gpus=0.1"
+# Then resume for next 25 rounds
+
+# W1: Baseline Reduced — ~60h (split into 3 × 20-round sessions with checkpoint/resume)
+# export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True CUDA_VISIBLE_DEVICES=7 RAY_USAGE_STATS_ENABLED=0 RAY_DISABLE_METRICS_EXPORT=1 ENABLE_GLOBAL_EVAL=true; \
+# flwr run . --stream \
+#   --run-config "num-server-rounds=20 local-epochs=1 batch-size=64 learning-rate=0.1 fraction-train=0.65 max-imgs-per-identity=9999 lr-decay-interval=10 data-path=/path/to/webface4m_rec/"
+# Resume sessions: add resume-from=checkpoints/latest_checkpoint.pt
+
+###############################################################################
+# RESUME FROM CHECKPOINT EXAMPLE
+###############################################################################
+# To continue any run from where it stopped:
+# flwr run . --stream \
+#   --run-config "resume-from=checkpoints/latest_checkpoint.pt num-server-rounds=20 [other config]..."
