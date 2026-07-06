@@ -1,46 +1,114 @@
+# Federated Facial REcogntion
+
+This repository provides a comprehensive framework for Federated Learning applied to Facial Recognition, built on top of [Flower (flwr)](https://flower.ai/) and [PyTorch](https://pytorch.org/), integrating [ArcFace](https://github.com/deepinsight/insightface) backbones.
+
 ---
-tags: [quickstart, vision, fds]
-dataset: [CIFAR-10]
-framework: [torch, torchvision]
----
 
-# Federated Facial Recognition
-This research explores the application of Federated Learning (FL) as a privacy-preserving paradigm for 2D facial recognition systems, directly addressing the growing concerns surrounding biometric data collection and centralization. We investigate the efficacy of integrating state-of-the-art FL techniques with existing facial recognition methods, with a particular focus on the potential benefits of incorporating synthetically generated facial data to enhance model robustness and privacy. Despite its promise, significant challenges persist, including managing non-IID (non-independent and identically distributed) data heterogeneity, overcoming hardware constraints on client devices, and ensuring sufficient data availability for effective federated training.
+## 1. Environment Setup
 
-## Set up the project
+First, clone the repository and navigate to the project directory:
 
-### Fetch the app
-
-Install Flower:
-
-```shell
-pip install flwr
+```bash
+git clone https://github.com/PedroBVidal/face_rec_FL.git
+cd face_rec_FL
 ```
 
-Fetch the app:
+Install the required dependencies using the provided `requirements.txt` file. We recommend using a virtual environment or conda:
 
-```shell
-flwr new @flwrlabs/quickstart-pytorch
+```bash
+pip install -r requirements.txt
 ```
 
-This will create a new directory called `quickstart-pytorch` with the following structure:
-
-```shell
-quickstart-pytorch
-├── pytorchexample
-│   ├── __init__.py
-│   ├── client_app.py   # Defines your ClientApp
-│   ├── server_app.py   # Defines your ServerApp
-│   └── task.py         # Defines your model, training and data loading
-├── pyproject.toml      # Project metadata like dependencies and configs
-└── README.md
-```
-
-### Install dependencies and project
-
-Install the dependencies defined in `pyproject.toml` as well as the `pytorchexample` package.
+Additionally, install the current project in editable mode so that imports work correctly:
 
 ```bash
 pip install -e .
 ```
 
+---
+
+## 2. Dataset Preparation (Aligned and Cropped)
+
+For facial recognition tasks, it is critical that your training and evaluation images are **aligned and cropped** (typically to 112x112 pixels) using facial landmarks before feeding them into the network. 
+
+1. **Obtain a dataset**: You can use datasets like MS-Celeb-1M, WebFace42M, CASIA-WebFace, or your own custom dataset.
+2. **Align and crop**: If your dataset is not already aligned, use tools like MTCNN or RetinaFace to detect landmarks and crop the faces to 112x112.
+3. **Structure**: Organize the dataset such that each identity has its own folder, e.g.:
+   ```text
+   /path/to/dataset/
+   ├── identity_1/
+   │   ├── image_0001.jpg
+   │   └── image_0002.jpg
+   ├── identity_2/
+   │   └── image_0001.jpg
+   └── ...
+   ```
+
+### Configuring the Dataset Path
+
+Once your dataset is ready, you must configure the project to point to it. 
+Open `pyproject.toml` in the root of the project and update the `data-path` value under `[tool.flwr.app.config]`:
+
+```toml
+[tool.flwr.app.config]
+# Other configurations...
+data-path = "/path/to/your/aligned/and/cropped/dataset/"
+```
+
+You can also adjust other hyperparameters here, such as `num-server-rounds`, `batch-size`, and `learning-rate`.
+
+---
+
+## 3. Running a Simulation with GPU
+
+Flower's Simulation Engine allows you to simulate a large number of clients on a single machine or a cluster, automatically managing GPU resources.
+
+To run a simulation utilizing GPU resources, use the `flwr run` command. By default, Flower will allocate available GPU resources to the client applications:
+
+```bash
+flwr run . 
+```
+
+### Overriding Configuration on the Fly
+
+You can easily override the configuration defined in `pyproject.toml` directly from the command line. For example, to run for 50 rounds with a batch size of 128:
+
+```bash
+flwr run . --run-config "num-server-rounds=50 batch-size=128 learning-rate=0.05"
+```
+
+### Using Custom Schedulers (Advanced)
+
+If you are running specific benchmarks or need more granular control over how clients are scheduled, you can use the provided bash scripts that leverage custom schedulers:
+
+```bash
+# Example: Run Emore benchmarks
+nohup bash scripts/run_emore_benchmarks.sh > benchmark_run_emore.log 2>&1 &
+```
+*(Make sure to update the conda environment name inside the bash script if necessary)*
+
+---
+
+## 4. Outputs, Logs, and Metrics
+
+As the federated training progresses, several artifacts will be generated:
+
+- **Checkpoints**: Stored in the `checkpoints/` directory. The best global models and individual round checkpoints are saved here.
+- **Metrics**: A `metrics.json` file will be updated with evaluation metrics (e.g., accuracy, loss) across rounds.
+- **Logs**: Detailed execution logs will be available in the `logs/` directory.
+- **TensorBoard**: You can visualize the training progress in real-time by pointing TensorBoard to the logs directory:
+  
+  ```bash
+  tensorboard --logdir logs/tensorboard/
+  ```
+
+---
+
+## 5. Repository Structure Overview
+
+- `client_app.py`: Defines the Flower Client behavior (local training and evaluation).
+- `server_app.py`: Defines the Flower Server behavior (aggregation strategies).
+- `task.py`: Contains the model definitions (ArcFace backbones), data loading logic, and training loop.
+- `custom_strategy.py`: Implements any custom aggregation strategies (like FedAvg with specific metric aggregation).
+- `pyproject.toml`: The main configuration file for Flower and Python dependencies.
+- `arcface_torch/`: A submodule/directory containing the core ArcFace model implementations.
