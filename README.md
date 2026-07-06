@@ -4,9 +4,8 @@ dataset: [CIFAR-10]
 framework: [torch, torchvision]
 ---
 
-# Federated Learning with PyTorch and Flower (Quickstart Example)
-
-This introductory example to Flower uses PyTorch, but deep knowledge of PyTorch is not necessarily required to run the example. However, it will help you understand how to adapt Flower to your use case. Running this example in itself is quite easy. This example uses [Flower Datasets](https://flower.ai/docs/datasets/) to download, partition and preprocess the CIFAR-10 dataset.
+# Federated Facial Recognition
+This research explores the application of Federated Learning (FL) as a privacy-preserving paradigm for 2D facial recognition systems, directly addressing the growing concerns surrounding biometric data collection and centralization. We investigate the efficacy of integrating state-of-the-art FL techniques with existing facial recognition methods, with a particular focus on the potential benefits of incorporating synthetically generated facial data to enhance model robustness and privacy. Despite its promise, significant challenges persist, including managing non-IID (non-independent and identically distributed) data heterogeneity, overcoming hardware constraints on client devices, and ensuring sufficient data availability for effective federated training.
 
 ## Set up the project
 
@@ -45,31 +44,3 @@ Install the dependencies defined in `pyproject.toml` as well as the `pytorchexam
 pip install -e .
 ```
 
-## Run the project
-
-You can run your Flower project in both _simulation_ and _deployment_ mode without making changes to the code. If you are starting with Flower, we recommend you using the _simulation_ mode as it requires fewer components to be launched manually. By default, `flwr run` will make use of the Simulation Engine.
-
-### Run with the Simulation Engine
-
-> [!TIP]
-> This example runs faster when the `ClientApp`s have access to a GPU. If your system has one, you can make use of it by configuring the `backend.client-resources` component in your Flower Configuration. Check the [Simulation Engine documentation](https://flower.ai/docs/framework/how-to-run-simulations.html) to learn more about Flower simulations and how to optimize them.
-
-```bash
-# Run with the default federation (CPU only)
-flwr run .
-```
-
-You can also override some of the settings for your `ClientApp` and `ServerApp` defined in `pyproject.toml`. For example:
-
-```bash
-flwr run . --run-config "num-server-rounds=5 learning-rate=0.05"
-```
-
-> [!TIP]
-> For a more detailed walk-through check our [quickstart PyTorch tutorial](https://flower.ai/docs/framework/tutorial-quickstart-pytorch.html)
-
-### Run with the Deployment Engine
-
-Follow this [how-to guide](https://flower.ai/docs/framework/how-to-run-flower-with-deployment-engine.html) to run the same app in this example but with Flower's Deployment Engine. After that, you might be intersted in setting up [secure TLS-enabled communications](https://flower.ai/docs/framework/how-to-enable-tls-connections.html) and [SuperNode authentication](https://flower.ai/docs/framework/how-to-authenticate-supernodes.html) in your federation.
-
-If you are already familiar with how the Deployment Engine works, you may want to learn how to run it using Docker. Check out the [Flower with Docker](https://flower.ai/docs/framework/docker/index.html) documentation.
