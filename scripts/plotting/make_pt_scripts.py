@@ -1,5 +1,8 @@
 import os
 
+# Resolve paths relative to this script's directory
+_script_dir = os.path.dirname(os.path.abspath(__file__))
+
 files_to_modify = {
     "plot_metrics.py": [
         ('output_dir = "/home/pedro.vidal/facerec_flower/face_rec_fl/analysis_plots"', 'output_dir = "/home/pedro.vidal/facerec_flower/face_rec_fl/analysis_plots_pt"'),
@@ -47,10 +50,12 @@ files_to_modify = {
 }
 
 for filename, replacements in files_to_modify.items():
-    with open(filename, 'r') as f:
+    filepath = os.path.join(_script_dir, filename)
+    with open(filepath, 'r') as f:
         content = f.read()
     for old, new in replacements:
         content = content.replace(old, new)
-    with open(filename.replace('.py', '_pt.py'), 'w') as f:
+    outpath = os.path.join(_script_dir, filename.replace('.py', '_pt.py'))
+    with open(outpath, 'w') as f:
         f.write(content)
         print(f"Generated {filename.replace('.py', '_pt.py')}")

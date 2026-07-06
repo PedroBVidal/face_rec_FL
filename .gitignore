@@ -65,5 +65,10 @@ package-lock.json
 # ===== Metrics JSON (generated) =====
 **/metrics.json
 
+# ===== Analysis Plots (generated) =====
+analysis_plots
+analysis_plots_pt
+
+
 # ===== Binary / compiled file =====
 python

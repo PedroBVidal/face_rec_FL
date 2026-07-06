@@ -7,7 +7,7 @@
 # Checkpoints are saved per-round, so you can always resume.
 #
 # Usage:
-#   nohup bash face_rec_fl/scheduler_emore.sh > face_rec_fl/logs/scheduler_logs/nohup_v4.out 2>&1 &
+#   nohup bash face_rec_fl/scripts/scheduler_emore.sh > face_rec_fl/logs/scheduler_logs/nohup_v4.out 2>&1 &
 # =============================================================================
 
 PROJECT_DIR="/home/pedro.vidal/facerec_flower/face_rec_fl"

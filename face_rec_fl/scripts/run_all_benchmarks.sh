@@ -3,7 +3,7 @@
 # Automated DCFace Benchmark Runner using Python Scheduler
 #
 # Usage:
-#   nohup bash face_rec_fl/run_all_benchmarks.sh > benchmark_run.log 2>&1 &
+#   nohup bash face_rec_fl/scripts/run_all_benchmarks.sh > benchmark_run.log 2>&1 &
 #
 # Monitor progress:
 #   tail -f benchmark_run.log
@@ -19,7 +19,7 @@ pkill -9 -u pedro.vidal -f "flwr|ray|flower" 2>/dev/null || true
 sleep 5
 
 # Launch the python scheduler
-python face_rec_fl/scheduler.py
+python face_rec_fl/schedulers/scheduler.py
 
 echo "============================================================"
 echo "ALL DCFace BENCHMARKS COMPLETE at $(date)"
