@@ -1,4 +1,4 @@
-# Federated Facial REcogntion
+# Federated Facial Recogntion
 
 This repo explores the application of Federated Learning (FL) as a privacy-preserving paradigm for 2D facial recognition systems, directly addressing the growing concerns surrounding biometric data collection and centralization. We investigate the efficacy of integrating state-of-the-art FL techniques with existing facial recognition methods, with a particular focus on the potential benefits of incorporating synthetically generated facial data to enhance model robustness and privacy. Despite its promise, significant challenges persist, including managing non-IID (non-independent and identically distributed) data heterogeneity, overcoming hardware constraints on client devices, and ensuring sufficient data availability for effective federated training.
 
